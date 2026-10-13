@@ -1,6 +1,6 @@
 # Work PowerShell Toolkit
 
-Collection of PowerShell scripts used to automate repetitive administration tasks.
+Collection of PowerShell scripts used to automate repetitive administration tasks. More scripts will be added over time.
 
 ## Current Scripts
 
@@ -13,5 +13,3 @@ Collection of PowerShell scripts used to automate repetitive administration task
 
 - Reduce repetitive manual tasks.
 - Continue learning PowerShell automation.
-
-More scripts will be added over time.
