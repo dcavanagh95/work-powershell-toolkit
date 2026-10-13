@@ -11,8 +11,7 @@ Collection of PowerShell scripts used to automate repetitive administration task
 
 ## Goals
 
-- Reduce repetitive manual tasks
-- Improve administration efficiency
-- Continue learning PowerShell automation
+- Reduce repetitive manual tasks.
+- Continue learning PowerShell automation.
 
 More scripts will be added over time.
