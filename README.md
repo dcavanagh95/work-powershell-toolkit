@@ -1,15 +1,14 @@
 # Work PowerShell Toolkit
 
-Collection of PowerShell scripts used to automate repetitive administration tasks. More scripts will be added over time.
+A collection of PowerShell scripts created to simplify common administration tasks, automate repetitive processes, and improve operational efficiency.
 
-## Current Scripts
+## Disclaimer
 
-- **Start-InfoLinkServices.ps1** - Starts InfoLink Windows services.
-- **Stop-InfoLinkServices.ps1** - Stops InfoLink Windows services.
-- **Open-MultipleRDPSessions.ps1** - Opens multiple Remote Desktop sessions.
-- **Open-InfoLinkConfigs.ps1** - Opens commonly used InfoLink configuration files.
+All scripts in this repository have been sanitised prior to publication. Any sensitive, proprietary, or environment-specific information has been removed or replaced with example values.
 
 ## Goals
 
-- Reduce repetitive manual tasks.
-- Continue learning PowerShell automation.
+- Reduce repetitive manual administration tasks.
+- Share reusable PowerShell solutions and examples.
+- Continue developing PowerShell automation skills.
+- Build a portfolio of practical systems administration and cloud administration projects.
