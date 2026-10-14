@@ -1,2 +1,0 @@
-Start-Process notepad.exe "C:\Program Files\InfoLink\COMServer\module-conf\module-server.properties.local"
-Start-Process notepad.exe "C:\Program Files\InfoLink\AppServer\standalone\configuration\standalone-full.xml"
