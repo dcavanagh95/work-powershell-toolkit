@@ -1,6 +1,5 @@
-# Add a user to a mail-enabled security group.
-# -BypassSecurityGroupManagerCheck allows Exchange administrators
-# to modify group membership without being listed as a group manager.
+# Add a user to a mail-enabled security group
+# -BypassSecurityGroupManagerCheck allows Exchange administrators to modify group membership without being listed as a group manager
 
 Add-DistributionGroupMember `
     -Identity "MailEnabledSecurityGroup" `
