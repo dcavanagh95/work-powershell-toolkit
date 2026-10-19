@@ -1,2 +1,0 @@
-ALTER DATABASE [DatabaseName] SET ONLINE;
-GO
