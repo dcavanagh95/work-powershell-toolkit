@@ -1,7 +1,5 @@
 # Application Management Menu
-# Run PowerShell as Administrator
-#
-# Template for managing application services and configuration files.
+# Template for managing application services and configuration files
 
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 
