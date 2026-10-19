@@ -1,3 +1,5 @@
+# Add a user to multiple distribution groups
+
 $User = Read-Host "Enter user email address"
 
 $Groups = @(
