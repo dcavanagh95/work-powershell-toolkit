@@ -1,18 +1,32 @@
-# InfoLink Management Menu
+# Application Management Menu
 # Run PowerShell as Administrator
+#
+# Template for managing application services and configuration files.
 
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+
+# Application services
+$Services = @(
+    "Application Service"
+    "Application Module Server"
+    "Application Module Server v2"
+    "Application Routing Server"
+)
+
+# Configuration files
+$ConfigFile1 = "C:\Program Files\Application\Config\config.properties"
+$ConfigFile2 = "C:\Program Files\Application\Config\application.xml"
 
 do {
     Clear-Host
 
     Write-Host "=============================="
-    Write-Host "     InfoLink Management"
+    Write-Host "   Application Management"
     Write-Host "=============================="
     Write-Host ""
-    Write-Host "1. Start InfoLink Services"
-    Write-Host "2. Stop InfoLink Services"
-    Write-Host "3. Open InfoLink Config Files"
+    Write-Host "1. Start Application Services"
+    Write-Host "2. Stop Application Services"
+    Write-Host "3. Open Configuration Files"
     Write-Host "4. Exit"
     Write-Host ""
 
@@ -21,14 +35,12 @@ do {
     switch ($Choice) {
 
         "1" {
-            Write-Host "`nStarting InfoLink services..." -ForegroundColor Green
+            Write-Host "`nStarting application services..." -ForegroundColor Green
 
-            Set-Service "InfoLink" -StartupType Automatic
-
-            Start-Service "InfoLink" -ErrorAction Continue
-            Start-Service "InfoLink Module Server" -ErrorAction Continue
-            Start-Service "InfoLink Module Server v2" -ErrorAction Continue
-            Start-Service "InfoLink Protocol Routing Server" -ErrorAction Continue
+            foreach ($Service in $Services) {
+                Set-Service $Service -StartupType Automatic -ErrorAction Continue
+                Start-Service $Service -ErrorAction Continue
+            }
 
             Start-Process services.msc
 
@@ -37,14 +49,12 @@ do {
         }
 
         "2" {
-            Write-Host "`nStopping InfoLink services..." -ForegroundColor Yellow
+            Write-Host "`nStopping application services..." -ForegroundColor Yellow
 
-            Stop-Service "InfoLink" -Force -ErrorAction Continue
-            Stop-Service "InfoLink Module Server" -Force -ErrorAction Continue
-            Stop-Service "InfoLink Module Server v2" -Force -ErrorAction Continue
-            Stop-Service "InfoLink Protocol Routing Server" -Force -ErrorAction Continue
-
-            Set-Service "InfoLink" -StartupType Disabled
+            foreach ($Service in $Services) {
+                Stop-Service $Service -Force -ErrorAction Continue
+                Set-Service $Service -StartupType Disabled -ErrorAction Continue
+            }
 
             Start-Process services.msc
 
@@ -53,12 +63,12 @@ do {
         }
 
         "3" {
-            Write-Host "`nOpening InfoLink configuration files..." -ForegroundColor Cyan
+            Write-Host "`nOpening configuration files..." -ForegroundColor Cyan
 
-            Start-Process notepad.exe "C:\Program Files\InfoLink\COMServer\module-conf\module-server.properties.local"
-            Start-Process notepad.exe "C:\Program Files\InfoLink\AppServer\standalone\configuration\standalone-full.xml"
+            Start-Process notepad.exe $ConfigFile1
+            Start-Process notepad.exe $ConfigFile2
 
-            Write-Host "`nConfig files opened." -ForegroundColor Cyan
+            Write-Host "`nConfiguration files opened." -ForegroundColor Cyan
             Read-Host "Press Enter to return to menu"
         }
 
